@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR 리다이렉트</title>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Android 판별
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.example";
+            } 
+            // iOS 판별
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/app/id123456789";
+            } 
+            // 기타 웹
+            else {
+                window.location.href = "https://example.com";
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>잠시만 기다려 주세요. 기기에 맞는 페이지로 이동 중입니다...</p>
+</body>
+</html>
